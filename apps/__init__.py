@@ -2,7 +2,7 @@ from typing import List
 
 from aiogram import Router
 
-from . import *
+from . import test_app
 
 
 app_routers: List[Router] = [ 
@@ -10,5 +10,5 @@ app_routers: List[Router] = [
     # register apps here
 ]
 
-main_route: Router = Router('main_route')
+main_route: Router = Router()
 main_route.include_routers(*app_routers)
