@@ -9,7 +9,7 @@ import utils
 
 
 ENDPOINT = utils.env_conf["ENDPOINT"]
-BOT_TOKEN = utils.env_conf["ENDPOINT"]
+BOT_TOKEN = utils.env_conf["BOT_TOKEN"]
 
 
 def runGithubWebhook(ENDPOINT: str):
