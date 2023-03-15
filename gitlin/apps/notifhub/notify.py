@@ -1,9 +1,7 @@
 from aiogram import Router
 from pyramid import view
 
-from notifhub import nfty_route
-from Gitlin import utils
-
+from gitlin import utils, db, aiobot
 
 ENDPOINT: str = utils.env_conf["ENDPOINT"]
 
@@ -21,5 +19,7 @@ class GithubWebhookPayload(object):
         pass
 
     def __del__(self):
+        data = db.getRepoDetail(self.payload[''])#to-do
+        map(lambda d: aiobot.bot.send_message(d["chat_id"],self.notif,d["topic_id"]),data)
+        # bot.s
 
-        pass

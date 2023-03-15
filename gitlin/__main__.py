@@ -9,7 +9,6 @@ import utils
 
 
 ENDPOINT = utils.env_conf["ENDPOINT"]
-BOT_TOKEN = utils.env_conf["BOT_TOKEN"]
 
 
 def runGithubWebhook(ENDPOINT: str):
@@ -23,11 +22,11 @@ def runGithubWebhook(ENDPOINT: str):
     server = make_server("0.0.0.0", 80, app)
     server.serve_forever()
 
-def runAioGram(BOT_TOKEN: str):
+def runAioGram(bot,BOT_TOKEN: str):
     # start telegram bot poller
     logging.basicConfig(level=logging.INFO)
-    asyncio.run(aiobot.fire(BOT_TOKEN))
+    asyncio.run(aiobot.fire(bot,BOT_TOKEN))
 
 if __name__ == "__main__":
-    runAioGram(BOT_TOKEN)
+    runAioGram(aiobot.bot,aiobot.BOT_TOKEN)
     runGithubWebhook(ENDPOINT)
