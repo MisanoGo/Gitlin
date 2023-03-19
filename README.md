@@ -2,10 +2,10 @@
 
 Gitlin is github reposetory assistant bot in telegrams
 
-##Futures :
+## Futures :
     notifier
 
-##Dependencies :
+## Dependencies :
 -   pygithub 
 -   aiogram 
 -   pyramid 

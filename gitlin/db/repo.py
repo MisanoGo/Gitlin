@@ -1,19 +1,10 @@
-from pysondb import db
-from typing import List,Dict
+from typing import List
 
-repo_db = db.getDb('repo.db',log=True)
+def registerGroup(creator: int,chat: int,thread: int): #TODO
+    pass
 
-# implement your oprations on db as functions in here
+def setServices(): # TODO
+    pass
 
-schema: Dict[str,int] = {
-    "repo_id": 0,
-    "chat_id": 0,
-    "topic_id": 0
-}
-
-def addData(s: schema):
-    repo_db.add(s)
-
-def getRepoDetail(repo: int) -> List[Dict]:
-    q = {"repo_id":repo}
-    return repo_db.getByQuery(q)
+def getGroups(repo_id: int) -> List: #TODO
+    pass
