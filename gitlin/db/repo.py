@@ -6,5 +6,8 @@ def registerGroup(creator: int,chat: int,thread: int): #TODO
 def setServices(): # TODO
     pass
 
-def getGroups(repo_id: int) -> List: #TODO
-    pass
+@property
+def groupList() -> List[int]: #TODO
+    group_list: List[int] = []
+    # add chat id's from db to list
+    return group_list

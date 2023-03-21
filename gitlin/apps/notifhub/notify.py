@@ -19,7 +19,6 @@ class GithubWebhookPayload(object):
         pass
 
     def __del__(self):
-        data = db.getRepoDetail(self.payload[''])#to-do
-        map(lambda d: aiobot.bot.send_message(d["chat_id"],self.notif,d["topic_id"]),data)
-        # bot.s
+        data = db.getByRepo(self.payload['']) #TODO: get repo id from payload
+        map(lambda d: aiobot.bot.send_message(d["chat"],self.notif,d["thread"]),data)
 
